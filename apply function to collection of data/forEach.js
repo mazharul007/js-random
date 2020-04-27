@@ -66,7 +66,7 @@ movies.forEach((movie)=>{
     }
 })
 
-const numbers= [2,25,36,99];
+let numbersArr= [2,25,36,99];
 
 numbers.forEach((num,index,fullArr)=>{
     console.log(`Index:${index} Element: ${num} Full Array: ${fullArr}`);
