@@ -50,3 +50,10 @@ const movieTitle = movies.map((title)=>{
     return title.title.toUpperCase();
 }) 
 console.log(movieTitle);
+
+const numbersList = [2,3,46,8,9,11,17];
+const oddOrEven = numbersList.map(numb=>{
+    if(numb % 2 === 0) return 'Even';
+    return 'Odd';
+})
+console.log(oddOrEven);
