@@ -32,4 +32,13 @@ const filterByGenres = movies.filter(byGenre=>byGenre.genres.includes("Adventure
 
 console.log(filterByGenres);
 
-//Example 
+//result by the user search 
+
+const userQuery = "The";
+
+const queryResult = movies.filter(movie=>{
+    const title = movie.title.toLowerCase();
+    return title.includes(userQuery.toLowerCase());
+})
+
+console.log(queryResult);
