@@ -17,20 +17,83 @@ console.log(getStats(numbers));
 const role = "Admin";
 const person = "Mr. Walt";
 const role2 = "Manager";
-const person2 = "Skyler Walt"
-const team = {  
+const person2 = "Skyler Walt";
+const team = {
   [role]: person,
 };
 
 // old syntax
-team[role2]=person2;
-
+team[role2] = person2;
 
 const addProp = (obj, k, v) => {
-  return { ...obj,
-     [k]: v
-}
-}
-const res = addProp(team,'Happy',':)');
+  return { ...obj, [k]: v };
+};
+const res = addProp(team, "Happy", ":)");
 console.log(res);
+
+// Adding methods to object:
+
+const math = {
+  mul(x, y) {
+    x * y;
+  },
+  sqr(x) {
+    x * x;
+  },
+};
+
+console.log(math.sqr(6));
+console.log(math.mul(10, 3.1416));
+
+
+// using this in methods
+const personX={
+  firstName: 'Mazharul',
+  middleName: 'Hoque',
+  lastName : 'Naumy',
+  fullName(){
+    const {
+      firstName,
+      middleName,
+      lastName
+    }= this;
+    return `${firstName} ${middleName} ${lastName}`;
+  },
+
+  personsBio(){
+    console.log(this);
+    const fullName = this.fullName();
+    console.log(`${fullName} is  a Jr. Software Engineer`);
+  }
+}
+personX.personsBio();
+
+// phrase generator 
+
+const goodVibes ={
+  phrases:[
+    "Honest",
+    "Positive",
+    "Intelligent ",
+    "Loyal"],
+  pickPhrases(){
+    const {
+      phrases
+    }=this;
+    const idx = Math.floor(Math.random()* phrases.length);
+    return phrases[idx]; 
+  },
+  start(){
+    //console.log(this.pickPhases());
+    this.timerId = setInterval(() => {
+      console.log(this.pickPhrases());
+    }, 3000);
+  },
+  stop(){
+    clearInterval(this.timerId);
+    console.log("Its over!");
+  }
+}
+goodVibes.start();
+
 
