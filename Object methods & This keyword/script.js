@@ -94,6 +94,41 @@ const goodVibes ={
     console.log("Its over!");
   }
 }
-goodVibes.start();
+//goodVibes.start();
 
-
+//objects method designing : deck of cards
+const myDeck={
+  deck:[],
+  suits:['hearts','diamonds','clubs','spades'],
+  values:'2,3,4,5,6,7,8,9,10,J,Q,K,A',
+  drawnCard:[],
+  initializeDeck(){
+    const{
+      suits,
+      values,
+      deck
+    }=this;
+      for(let value of values.split(',')){
+        for(let suit of suits){
+            deck.push({
+              suit,
+              value
+            })          
+        }
+      }
+  },
+  drawCard(){
+    const card = this.deck.pop();
+    this.drawnCard.push(card);
+    return card;
+  },
+  drawMultipleCards(numberOfCards){
+    const cards = [];
+    for (let cards = 0; cards < numberOfCards; cards++) {
+      cards.push(this.drawCard());
+    }
+    return card;
+  }
+}
+myDeck.initializeDeck();
+myDeck.deck;
